@@ -8,8 +8,8 @@ def create_app():
 
     app.secret_key = '71c88f17-91a8-4481-8919-8392b2e72fc7'
     app.config['JSON_AS_ASCII'] = False
-    app.debug = True
-    app.env = 'development'
+    app.templates_auto_reload = True
+    app.env = 'production'
 
     from web.app.view import view as view_blueprint
     app.register_blueprint(view_blueprint)

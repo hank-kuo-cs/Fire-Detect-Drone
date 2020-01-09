@@ -4,7 +4,32 @@
     <meta charset="UTF-8">
     <title>Fire Detection Drone</title>
 </head>
+<style>
+    #dynamic-load {
+        width: 80vw;
+        height: 300px;
+        margin: 20px auto;
+        background-color: {{dynamic_color}};
+    }
+</style>
 <body>
-
+    <h1>Develop</h1>
+    <h2>Dynamic Loading Template</h2>
+    <div id="dynamic-load"></div>
 </body>
 </html>
+<script>
+    var loopReload;
+
+    function loopInterval() {
+        loopReload = setInterval(reloadPage, 1000)
+    }
+
+    function reloadPage() {
+        {% if not is_fire %}
+            location.reload()
+        {% endif %}
+    }
+
+    loopInterval()
+</script>
