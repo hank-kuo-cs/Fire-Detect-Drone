@@ -1,0 +1,40 @@
+body {
+	background-color: #2F4F4F;
+}
+
+.button {
+  background-color: #FFEFD5;
+  border: none;
+  color: black;
+  padding: 20px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2vw;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+h1 {
+	color: white;
+	font-size: 70px;
+	
+}
+
+.title {
+	height: 20vh;
+	//background-color: gray;
+	text-align:center;
+	line-height: 20vh;
+	margin: 20vh 0 0;
+
+}
+
+.main {
+	//background-color: #ECECFF;
+	height: 20vh;
+	text-align:center;
+	line-height: 20vh;
+
+}

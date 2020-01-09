@@ -26,9 +26,20 @@
     }
 
     function reloadPage() {
+        {% if is_fire %}
+            //fire ball mouse animation
+            show_pika()
+
+        {% endif %}
         {% if not is_fire %}
             location.reload()
         {% endif %}
+    }
+
+    function show_pika() {
+        var img = document.createElement("img");
+        img.src = "/data/pika.gif"
+        document.body.appendChild(img);
     }
 
     loopInterval()
