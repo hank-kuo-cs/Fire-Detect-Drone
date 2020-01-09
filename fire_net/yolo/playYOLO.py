@@ -13,7 +13,7 @@ nmsThreshold = 0.1  # Non-maximum suppression threshold
 
 classesFile = "fire_net/yolo/cfg.person/obj.names"
 modelConfiguration = "fire_net/yolo/cfg.person/yolov3-tiny.cfg"
-modelWeights = "fire_net/yolo/cfg.person/weights/yolov3-tiny_9000.weights"
+modelWeights = "fire_net/yolo/cfg.person/weights/yolov3-tiny_97000.weights"
 
 displayScreen = False  # Do you want to show the image on LCD?
 outputToFile = True  # output the predicted result to image or video file
@@ -35,7 +35,7 @@ else:
 
 with open(classesFile, 'rt') as f:
     classes = f.read().rstrip('\n').split('\n')
-    print(classes)
+    # print(classes)
 
 parser = argparse.ArgumentParser(description="Do you wish to scan for live hosts or conduct a port scan?")
 parser.add_argument("-i", dest='image', action='store', help='Image')
@@ -137,7 +137,7 @@ def drawPred(frame, classId, conf, left, top, right, bottom, orgFrame):
     cv2.rectangle(frame, (left, top), (right, bottom), boxColor, boxbold)
     cv2.putText(frame, labelName, (left, top - 10), cv2.FONT_HERSHEY_COMPLEX, fontSize, labelColor, fontBold)
 
-    print(labelName)
+    # print(labelName)
 
 
 def detect_fire(image):

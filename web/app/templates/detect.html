@@ -4,7 +4,50 @@
     <meta charset="UTF-8">
     <title>Fire Detection</title>
 </head>
+<style>
+    body {
+        background-color: lightblue;
+        font-family: cursive, monospace, sans-serif;
+    }
+
+    iframe {
+        height: 450px;
+        margin-left: 30px;
+        float: left;
+    }
+
+    h1, h2 {
+        margin-left: 30px;
+    }
+</style>
 <body>
+    <h1>Fire Detection Monitor</h1>
+    {% if is_fire %}
+    <div>
+        <h2>Detect Fire!!</h2>
+        <iframe src="/data/fire_mouse.gif" width="500px" scrolling="no" frameborder="0"></iframe>
+        <iframe src="/data/{{img_name}}.jpg" width="640px" scrolling="no" frameborder="0"></iframe>
+    </div>
+    {% else %}
+    <div>
+        <h2>Safe Now</h2>
+    </div>
+    {% endif %}
 
 </body>
 </html>
+<script>
+    var loopReload;
+
+    function loopInterval() {
+        loopReload = setInterval(reloadPage, 1000)
+    }
+
+    function reloadPage() {
+        {% if not is_fire %}
+            location.reload()
+        {% endif %}
+    }
+
+    loopInterval()
+</script>
