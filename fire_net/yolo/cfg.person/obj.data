@@ -1,0 +1,5 @@
+classes= 1
+train  = cfg.person/train.txt
+valid  = cfg.person/test.txt
+names = cfg.person/obj.names
+backup = cfg.person/weights
